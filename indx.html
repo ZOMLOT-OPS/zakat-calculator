@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="حاسبة زكاة المال - احسب مقدار الزكاة المستحقة عليك بسهولة وفق الشريعة الإسلامية. أدخل أموالك واحصل على النتيجة فوراً.">
+    <meta name="keywords" content="زكاة المال, حاسبة الزكاة, حساب الزكاة, نصاب الزكاة, زكاة الذهب, زكاة الفضة, الزكاة, islamic zakat calculator, zakat">
+    <meta name="author" content="حاسبة الزكاة">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/zakat-calculator">
+    <meta property="og:title" content="حاسبة زكاة المال - احسب زكاتك بسهولة">
+    <meta property="og:description" content="احسب مقدار الزكاة المستحقة عليك بسهولة وفق الشريعة الإسلامية. حاسبة دقيقة وسريعة ومجانية.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/zakat-calculator">
+    <meta property="og:image" content="https://example.com/zakat-calculator/og-image.svg">
+    <meta property="og:locale" content="ar_AR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="حاسبة زكاة المال - احسب زكاتك بسهولة">
+    <meta name="twitter:description" content="احسب مقدار الزكاة المستحقة عليك بسهولة وفق الشريعة الإسلامية. حاسبة دقيقة وسريعة ومجانية.">
+    <meta name="twitter:image" content="https://example.com/zakat-calculator/og-image.svg">
+    <meta name="theme-color" content="#1a7a4c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="حاسبة الزكاة">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <title>حاسبة زكاة المال - احسب زكاتك بسهولة وفق الشريعة الإسلامية</title>
+
+    <!-- schema.org Structured Data: WebApplication + FAQ -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "حاسبة زكاة المال",
+            "url": "https://example.com/zakat-calculator",
+            "description": "احسب مقدار الزكاة المستحقة عليك بسهولة وفق الشريعة الإسلامية",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "All",
+            "inLanguage": "ar",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "ما هو النصاب؟",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "النصاب هو الحد الأدنى من المال الذي إذا بلغه المسلم وجبت عليه الزكاة. ويُقدَّر النصاب بقيمة 85 غراماً من الذهب الخالص، وتختلف قيمته النقدية باختلاف سعر الذهب في السوق."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "متى تجب الزكاة؟",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "تجب الزكاة إذا بلغ المال النصاب، ومرَّ عليه سنة هجرية كاملة (حولان الحول)، وكان المال خالياً من الديون المستحقة. ويُشترط أن يكون المال قابلاً للنماء وفائضاً عن الحاجات الأساسية."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "هل الديون تخصم من الزكاة؟",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "نعم، الديون المستحقة عليك (التي يتوجب عليك سدادها) تُخصم من إجمالي المال قبل حساب الزكاة. أما الديون التي لك (المستحقة لك لدى الآخرين) فتضاف إلى إجمالي المال."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "هل الذهب يدخل في الزكاة؟",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "نعم، الذهب والفضة يدخلان في حساب الزكاة إذا بلغا النصاب، سواء كانا على شكل حليّ أو سبائك أو نقود. ونصاب الذهب 85 غراماً، ونصاب الفضة 595 غراماً."
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <style>
+        /* ============================
+             CSS Custom Properties
+             ============================ */
+        :root {
+            --font-primary: 'Tajawal', 'Segoe UI', 'Arial', sans-serif;
+            --color-green-600: #1a7a4c;
+            --color-green-500: #208b5a;
+            --color-green-400: #2dbf70;
+            --color-green-100: #d4f5e3;
+            --color-green-50: #edfaf3;
+            --color-gold-500: #c9a84c;
+            --color-gold-400: #d4af37;
+            --color-gold-300: #e6c860;
+            --color-gold-100: #fdf3d0;
+            --color-white: #ffffff;
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-300: #d1d5db;
+            --color-gray-400: #9ca3af;
+            --color-gray-500: #6b7280;
+            --color-gray-600: #4b5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            --color-red-500: #ef4444;
+            --color-red-100: #fee2e2;
+            --color-red-600: #dc2626;
+            --bg-body: #f5f7f5;
+            --bg-card: #ffffff;
+            --bg-input: #f9fafb;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.35s ease;
+            --transition-slow: 0.5s ease;
+            --max-width: 800px;
+            --header-gradient: linear-gradient(160deg, #1a7a4c 0%, #0d4f30 40%, #0a3d25 100%);
+        }
+
+        /* Dark Mode */
+        [data-theme="dark"] {
+            --bg-body: #111827;
+            --bg-card: #1a1f2b;
+            --bg-input: #1f2937;
+            --text-primary: #e5e7eb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+            --header-gradient: linear-gradient(160deg, #0d3d22 0%, #082d19 40%, #051f11 100%);
+            --color-green-50: #0a2a1a;
+            --color-green-100: #0d3320;
+            --color-red-100: #3b1515;
+            --color-gold-100: #3d3015;
+        }
+
+        /* ============================
+             Reset & Base
+             ============================ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+            overflow-x: hidden;
+        }
+
+        /* ============================
+             Scrollbar Styling
+             ============================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-green-600);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-green-500);
+        }
+
+        /* ============================
+             Typography
+             ============================ */
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+        }
+        h2 {
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+        }
+        h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        }
+        a {
+            color: var(--color-green-600);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        a:hover {
+            color: var(--color-green-500);
+        }
+
+        /* ============================
+             Container
+             ============================ */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin-inline: auto;
+            padding-inline: 1.25rem;
+        }
+
+        /* ============================
+             Header / Hero
+             ============================ */
+        .header {
+            background: var(--header-gradient);
+            color: #ffffff;
+            padding-block: 3rem 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background var(--transition-normal);
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 70%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+            animation: headerShimmer 12s ease-in-out infinite;
+        }
+        @keyframes headerShimmer {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(2%, -1%);
+            }
+            66% {
+                transform: translate(-1%, 2%);
+            }
+        }
+        .header>* {
+            position: relative;
+            z-index: 1;
+        }
+        .header__icon {
+            display: inline-block;
+            font-size: 3.2rem;
+            margin-bottom: 0.6rem;
+            animation: floatIcon 4s ease-in-out infinite;
+        }
+        @keyframes floatIcon {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+        .header__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .header__subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 500px;
+            margin-inline: auto;
+            font-weight: 400;
+        }
+        .header__badge {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* ============================
+             Dark Mode Toggle
+             ============================ */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-fast);
+            color: var(--text-primary);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+        .theme-toggle:active {
+            transform: scale(0.92);
+        }
+
+        /* ============================
+             Main Content
+             ============================ */
+        .main {
+            padding-block: 2rem 3rem;
+        }
+
+        /* ============================
+             Calculator Card
+             ============================ */
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            padding: 2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .calculator-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-green-600), var(--color-gold-400), var(--color-green-600));
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+        .calculator-card__title {
+            text-align: center;
+            margin-bottom: 1.8rem;
+            color: var(--color-green-600);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        [data-theme="dark"] .calculator-card__title {
+            color: var(--color-green-400);
+        }
+
+        /* ============================
+             Form Grid
+             ============================ */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .form-grid .full-width {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* ============================
+             Form Group
+             ============================ */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .form-group__label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .form-group__label .emoji-icon {
+            font-size: 1.1rem;
+        }
+        .form-group__input-wrapper {
+            position: relative;
+        }
+        .form-group__input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: var(--font-primary);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            transition: all var(--transition-fast);
+            outline: none;
+            text-align: right;
+            -moz-appearance: textfield;
+        }
+        .form-group__input::-webkit-outer-spin-button,
+        .form-group__input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .form-group__input:focus {
+            border-color: var(--color-green-500);
+            box-shadow: 0 0 0 4px rgba(26, 122, 76, 0.1);
+        }
+        [data-theme="dark"] .form-group__input:focus {
+            box-shadow: 0 0 0 4px rgba(45, 191, 112, 0.15);
+        }
+        .form-group__input.error {
+            border-color: var(--color-red-500);
+            animation: shakeInput 0.4s ease;
+        }
+        @keyframes shakeInput {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            20% {
+                transform: translateX(-6px);
+            }
+            40% {
+                transform: translateX(6px);
+            }
+            60% {
+                transform: translateX(-4px);
+            }
+            80% {
+                transform: translateX(4px);
+            }
+        }
+        .form-group__error-msg {
+            font-size: 0.8rem;
+            color: var(--color-red-500);
+            min-height: 1.2em;
+            opacity: 0;
+            transform: translateY(-6px);
+            transition: all var(--transition-fast);
+            pointer-events: none;
+        }
+        .form-group__error-msg.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================
+             Buttons Row
+             ============================ */
+        .buttons-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.8rem;
+            justify-content: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: var(--font-primary);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+            letter-spacing: 0.01em;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .btn--primary {
+            background: linear-gradient(135deg, var(--color-green-600), #0d4f30);
+            color: #fff;
+            box-shadow: 0 6px 24px rgba(26, 122, 76, 0.35);
+            font-size: 1.1rem;
+            padding: 1rem 2.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn--primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
+            background-size: 200% 200%;
+            animation: btnShine 3s ease-in-out infinite;
+        }
+        @keyframes btnShine {
+            0%,
+            100% {
+                background-position: 200% 200%;
+            }
+            50% {
+                background-position: -50% -50%;
+            }
+        }
+        .btn--primary:hover {
+            box-shadow: 0 8px 32px rgba(26, 122, 76, 0.5);
+            transform: translateY(-2px);
+        }
+        .btn--primary:active {
+            transform: translateY(0) scale(0.96);
+        }
+        .btn--outline {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .btn--outline:hover {
+            border-color: var(--color-green-500);
+            color: var(--color-green-600);
+            background: var(--color-green-50);
+        }
+        [data-theme="dark"] .btn--outline:hover {
+            background: var(--color-green-100);
+        }
+
+        /* ============================
+             Results Card
+             ============================ */
+        .results-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 1.8rem;
+            margin-top: 2rem;
+            border: 2px solid var(--color-green-400);
+            display: none;
+            animation: fadeSlideIn 0.5s ease;
+            transition: all var(--transition-normal);
+        }
+        .results-card.visible {
+            display: block;
+        }
+        .results-card.no-zakat {
+            border-color: var(--color-gold-400);
+            background: var(--color-gold-100);
+        }
+        [data-theme="dark"] .results-card.no-zakat {
+            background: #2a2515;
+            border-color: var(--color-gold-500);
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .results-card__title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: var(--color-green-600);
+        }
+        [data-theme="dark"] .results-card__title {
+            color: var(--color-green-400);
+        }
+        .results-card__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.8rem;
+            text-align: center;
+        }
+        @media (max-width: 500px) {
+            .results-card__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .results-card__item {
+            background: var(--color-green-50);
+            border-radius: var(--radius-md);
+            padding: 1rem 0.6rem;
+            transition: all var(--transition-fast);
+        }
+        [data-theme="dark"] .results-card__item {
+            background: var(--color-green-100);
+        }
+        .results-card__item--highlight {
+            background: linear-gradient(135deg, var(--color-green-600), #0d4f30);
+            color: #fff;
+            transform: scale(1.04);
+            box-shadow: var(--shadow-lg);
+        }
+        [data-theme="dark"] .results-card__item--highlight {
+            background: linear-gradient(135deg, var(--color-green-500), #0d3d22);
+        }
+        .results-card__label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 0.3rem;
+        }
+        .results-card__value {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+        .results-card__no-zakat-msg {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-gold-500);
+            padding: 1rem;
+        }
+
+        /* ============================
+             Info Sections
+             ============================ */
+        .info-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 1.8rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
+        .info-section__title {
+            color: var(--color-green-600);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        [data-theme="dark"] .info-section__title {
+            color: var(--color-green-400);
+        }
+        .info-section p,
+        .info-section li {
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+        }
+        .info-section ol {
+            padding-inline-start: 1.5rem;
+        }
+        .info-section ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============================
+             FAQ Accordion
+             ============================ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding-block: 0.8rem;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: all var(--transition-fast);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item__question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--text-primary);
+            gap: 0.8rem;
+            user-select: none;
+        }
+        .faq-item__question .arrow {
+            transition: transform var(--transition-fast);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            color: var(--color-green-600);
+        }
+        [data-theme="dark"] .faq-item__question .arrow {
+            color: var(--color-green-400);
+        }
+        .faq-item.open .faq-item__question .arrow {
+            transform: rotate(180deg);
+        }
+        .faq-item__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow), padding var(--transition-fast);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .faq-item.open .faq-item__answer {
+            max-height: 300px;
+            padding-top: 0.6rem;
+        }
+
+        /* ============================
+             Share Section
+             ============================ */
+        .share-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+        .share-section__title {
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            transition: all var(--transition-fast);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .share-btn:active {
+            transform: scale(0.93);
+        }
+        .share-btn--whatsapp {
+            background: #25d366;
+        }
+        .share-btn--whatsapp:hover {
+            background: #1fb855;
+        }
+        .share-btn--facebook {
+            background: #1877f2;
+        }
+        .share-btn--facebook:hover {
+            background: #1666d1;
+        }
+        .share-btn--twitter {
+            background: #0f1419;
+        }
+        .share-btn--twitter:hover {
+            background: #1a1f26;
+        }
+        .share-btn--telegram {
+            background: #26a5e4;
+        }
+        .share-btn--telegram:hover {
+            background: #1e8ec9;
+        }
+        .share-btn--copy {
+            background: var(--color-gray-500);
+        }
+        .share-btn--copy:hover {
+            background: var(--color-gray-600);
+        }
+        .share-btn__copied-tooltip {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-fast);
+            z-index: 2000;
+        }
+        .share-btn__copied-tooltip.show {
+            opacity: 1;
+        }
+
+        /* ============================
+             Footer
+             ============================ */
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        /* ============================
+             Scroll Reveal Animation
+             ============================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================
+             Utility
+             ============================ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 1.5rem;
+        }
+
+        /* ============================
+             Print Styles
+             ============================ */
+        @media print {
+            .theme-toggle,
+            .share-section,
+            .btn--outline {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                color: #000;
+            }
+            .calculator-card,
+            .results-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي" title="تبديل الوضع الليلي">
+        🌙
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <span class="header__icon">🕌</span>
+            <h1 class="header__title">حاسبة زكاة المال</h1>
+            <p class="header__subtitle">احسب مقدار الزكاة المستحقة عليك بسهولة وفق الشريعة الإسلامية</p>
+            <span class="header__badge">✨ مجانية · دقيقة · سريعة</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Calculator Card -->
+            <section class="calculator-card reveal" id="calculatorSection" aria-labelledby="calcTitle">
+                <h2 class="calculator-card__title" id="calcTitle">
+                    <span>🧮</span> أدخل بيانات أموالك
+                </h2>
+                <form id="zakatForm" novalidate>
+                    <div class="form-grid">
+                        <!-- Cash -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="cash">
+                                <span class="emoji-icon">💵</span> قيمة المال النقدي
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="cash" class="form-group__input" placeholder="مثال: 50000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="cashError"></span>
+                        </div>
+                        <!-- Gold -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="gold">
+                                <span class="emoji-icon">🟡</span> قيمة الذهب
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="gold" class="form-group__input" placeholder="مثال: 30000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="goldError"></span>
+                        </div>
+                        <!-- Silver -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="silver">
+                                <span class="emoji-icon">⚪</span> قيمة الفضة
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="silver" class="form-group__input" placeholder="مثال: 5000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="silverError"></span>
+                        </div>
+                        <!-- Investments -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="investments">
+                                <span class="emoji-icon">📈</span> قيمة الأسهم والاستثمارات
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="investments" class="form-group__input" placeholder="مثال: 20000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="investmentsError"></span>
+                        </div>
+                        <!-- Trade Goods -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="trade">
+                                <span class="emoji-icon">🏪</span> قيمة التجارة والبضائع
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="trade" class="form-group__input" placeholder="مثال: 15000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="tradeError"></span>
+                        </div>
+                        <!-- Receivables (ديون لك) -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="receivables">
+                                <span class="emoji-icon">📥</span> الديون التي لك
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="receivables" class="form-group__input" placeholder="مثال: 8000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="receivablesError"></span>
+                        </div>
+                        <!-- Debts (ديون عليك) -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="debts">
+                                <span class="emoji-icon">📤</span> الديون التي عليك
+                            </label>
+                            <div class="form-group__input-wrapper">
+                                <input type="number" id="debts" class="form-group__input" placeholder="مثال: 10000" min="0" step="0.01" inputmode="decimal">
+                            </div>
+                            <span class="form-group__error-msg" id="debtsError"></span>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="buttons-row full-width">
+                        <button type="submit" class="btn btn--primary" id="calculateBtn">
+                            ✨ احسب الزكاة
+                        </button>
+                        <button type="button" class="btn btn--outline" id="resetBtn">
+                            🔄 إعادة تعيين البيانات
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Results -->
+                <div class="results-card" id="resultsCard" aria-live="polite">
+                    <h3 class="results-card__title" id="resultsTitle">📊 نتيجة حساب الزكاة</h3>
+                    <div class="results-card__grid" id="resultsGrid">
+                        <div class="results-card__item" id="totalItem">
+                            <div class="results-card__label">إجمالي المال</div>
+                            <div class="results-card__value" id="totalValue">-</div>
+                        </div>
+                        <div class="results-card__item" id="nisabItem">
+                            <div class="results-card__label">النصاب الحالي</div>
+                            <div class="results-card__value" id="nisabValue">-</div>
+                        </div>
+                        <div class="results-card__item results-card__item--highlight" id="zakatItem">
+                            <div class="results-card__label">الزكاة الواجبة</div>
+                            <div class="results-card__value" id="zakatValue">-</div>
+                        </div>
+                    </div>
+                    <div class="results-card__no-zakat-msg" id="noZakatMsg" style="display:none;"></div>
+                </div>
+            </section>
+
+            <!-- What is Zakat Section -->
+            <section class="info-section reveal" aria-labelledby="whatIsZakatTitle">
+                <h2 class="info-section__title" id="whatIsZakatTitle">
+                    <span>❓</span> ما هي زكاة المال؟
+                </h2>
+                <p>
+                    <strong>زكاة المال</strong> هي الركن الثالث من أركان الإسلام، وهي فريضة مالية على كل مسلم
+                    يملك مالاً بلغ النصاب وحال عليه الحول (سنة هجرية كاملة). تُدفع الزكاة للمحتاجين
+                    والفقراء والمساكين وغيرهم من المستحقين الذين ذكرهم الله في القرآن الكريم.
+                </p>
+                <p>
+                    مقدار الزكاة الواجبة هو <strong>2.5%</strong> (ربع العشر) من إجمالي المال الذي بلغ
+                    النصاب، ويتم حسابها بعد خصم الديون المستحقة عليك وإضافة الديون المستحقة لك.
+                </p>
+            </section>
+
+            <!-- How to Calculate Section -->
+            <section class="info-section reveal" aria-labelledby="howToCalcTitle">
+                <h2 class="info-section__title" id="howToCalcTitle">
+                    <span>📐</span> كيفية حساب الزكاة
+                </h2>
+                <ol>
+                    <li><strong>جمع الأموال:</strong> اجمع كل ما تملك من نقد وذهب وفضة وأسهم وتجارة وديون مستحقة لك.</li>
+                    <li><strong>خصم الديون:</strong> اطرح الديون المستحقة عليك من إجمالي الأموال.</li>
+                    <li><strong>مقارنة النصاب:</strong> قارن الناتج مع قيمة النصاب (ما يعادل 85 غراماً من الذهب).</li>
+                    <li><strong>حساب الزكاة:</strong> إذا بلغ المال النصاب، اضرب إجمالي المال في 2.5% (أو اقسم على 40).</li>
+                    <li><strong>إخراج الزكاة:</strong> أخرج الزكاة للمستحقين فور وجوبها.</li>
+                </ol>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="info-section reveal" aria-labelledby="faqTitle">
+                <h2 class="info-section__title" id="faqTitle">
+                    <span>💬</span> الأسئلة الشائعة
+                </h2>
+                <div class="faq-item">
+                    <div class="faq-item__question" tabindex="0" role="button" aria-expanded="false">
+                        <span>ما هو النصاب؟</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-item__answer">
+                        <p>النصاب هو الحد الأدنى من المال الذي إذا بلغه المسلم وجبت عليه الزكاة. ويُقدَّر بقيمة 85 غراماً من الذهب الخالص (أو 595 غراماً من الفضة). تختلف قيمته النقدية بتغير سعر الذهب في الأسواق العالمية.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__question" tabindex="0" role="button" aria-expanded="false">
+                        <span>متى تجب الزكاة؟</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-item__answer">
+                        <p>تجب الزكاة إذا توفرت ثلاثة شروط: <strong>1)</strong> أن يبلغ المال النصاب. <strong>2)</strong> أن يمر على المال سنة هجرية كاملة (حولان الحول). <strong>3)</strong> أن يكون المال فائضاً عن الحاجات الأساسية وخالياً من الديون المستحقة.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__question" tabindex="0" role="button" aria-expanded="false">
+                        <span>هل الديون تخصم من الزكاة؟</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-item__answer">
+                        <p>نعم، الديون المستحقة عليك (التي يجب عليك سدادها للآخرين) تُخصم من إجمالي المال قبل حساب الزكاة. أما الديون التي لك (المستحقة لدى الآخرين) فتضاف إلى إجمالي المال الخاضع للزكاة.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__question" tabindex="0" role="button" aria-expanded="false">
+                        <span>هل الذهب يدخل في الزكاة؟</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-item__answer">
+                        <p>نعم، الذهب والفضة يدخلان في حساب الزكاة بجميع أشكالهما (حليّ، سبائك، نقود، مدخرات) إذا بلغا النصاب. ونصاب الذهب 85 غراماً، ونصاب الفضة 595 غراماً. ويُحتسب بناءً على القيمة السوقية يوم إخراج الزكاة.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Share Section -->
+            <section class="share-section reveal" aria-labelledby="shareTitle">
+                <h3 class="share-section__title" id="shareTitle">📤 شارك حاسبة الزكاة مع أصدقائك</h3>
+                <div class="share-buttons">
+                    <button class="share-btn share-btn--whatsapp" data-platform="whatsapp" aria-label="مشاركة عبر واتساب">
+                        💬 واتساب
+                    </button>
+                    <button class="share-btn share-btn--facebook" data-platform="facebook" aria-label="مشاركة عبر فيسبوك">
+                        📘 فيسبوك
+                    </button>
+                    <button class="share-btn share-btn--twitter" data-platform="twitter" aria-label="مشاركة عبر إكس">
+                        🐦 إكس
+                    </button>
+                    <button class="share-btn share-btn--telegram" data-platform="telegram" aria-label="مشاركة عبر تيليجرام">
+                        ✈️ تيليجرام
+                    </button>
+                    <button class="share-btn share-btn--copy" id="copyLinkBtn" aria-label="نسخ الرابط">
+                        🔗 نسخ الرابط
+                    </button>
+                </div>
+                <span class="share-btn__copied-tooltip" id="copiedTooltip">✅ تم نسخ الرابط!</span>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>جميع الحقوق محفوظة © 2026 · حاسبة زكاة المال</p>
+            <p style="font-size:0.8rem;margin-top:0.3rem;">نسأل الله أن يتقبل منا ومنكم صالح الأعمال 🤲</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // ============================
+            // CONFIGURATION
+            // ============================
+            // نصاب الزكاة (القيمة الافتراضية بالعملة المحلية - يتم تحديثها حسب سعر الذهب)
+            // النصاب = قيمة 85 غراماً من الذهب الخالص
+            // قم بتحديث هذه القيمة بناءً على سعر الذهب الحالي في السوق
+            const NISAB_DEFAULT = 5500; // القيمة الافتراضية - يرجى تحديثها حسب سعر الذهب الحالي
+
+            // ============================
+            // DOM ELEMENTS
+            // ============================
+            const zakatForm = document.getElementById('zakatForm');
+            const resultsCard = document.getElementById('resultsCard');
+            const resultsTitle = document.getElementById('resultsTitle');
+            const resultsGrid = document.getElementById('resultsGrid');
+            const totalValueEl = document.getElementById('totalValue');
+            const nisabValueEl = document.getElementById('nisabValue');
+            const zakatValueEl = document.getElementById('zakatValue');
+            const noZakatMsg = document.getElementById('noZakatMsg');
+            const totalItem = document.getElementById('totalItem');
+            const nisabItem = document.getElementById('nisabItem');
+            const zakatItem = document.getElementById('zakatItem');
+            const resetBtn = document.getElementById('resetBtn');
+            const themeToggle = document.getElementById('themeToggle');
+            const copyLinkBtn = document.getElementById('copyLinkBtn');
+            const copiedTooltip = document.getElementById('copiedTooltip');
+            const htmlElement = document.documentElement;
+
+            // Input fields mapping
+            const inputFields = {
+                cash: { el: document.getElementById('cash'), errorEl: document.getElementById('cashError') },
+                gold: { el: document.getElementById('gold'), errorEl: document.getElementById('goldError') },
+                silver: { el: document.getElementById('silver'), errorEl: document.getElementById('silverError') },
+                investments: { el: document.getElementById('investments'), errorEl: document.getElementById(
+                        'investmentsError') },
+                trade: { el: document.getElementById('trade'), errorEl: document.getElementById('tradeError') },
+                receivables: { el: document.getElementById('receivables'), errorEl: document.getElementById(
+                        'receivablesError') },
+                debts: { el: document.getElementById('debts'), errorEl: document.getElementById('debtsError') },
+            };
+
+            // ============================
+            // UTILITY FUNCTIONS
+            // ============================
+
+            /**
+             * تنسيق الأرقام مع فواصل الآلاف
+             * @param {number} num - الرقم المراد تنسيقه
+             * @returns {string} الرقم منسقاً
+             */
+            function formatNumber(num) {
+                if (isNaN(num) || num === null || num === undefined) return '0';
+                // استخدام Intl.NumberFormat للحصول على فواصل الآلاف
+                return new Intl.NumberFormat('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }).format(num);
+            }
+
+            /**
+             * استخراج قيمة رقمية من حقل إدخال
+             * @param {HTMLInputElement} inputEl
+             * @returns {number}
+             */
+            function getInputValue(inputEl) {
+                const raw = inputEl.value.trim();
+                if (raw === '') return 0;
+                const parsed = parseFloat(raw);
+                return isNaN(parsed) ? null : parsed;
+            }
+
+            /**
+             * التحقق من صحة جميع المدخلات
+             * @returns {{ isValid: boolean, values: object|null, errors: object }}
+             */
+            function validateAllInputs() {
+                let isValid = true;
+                const values = {};
+                const errors = {};
+
+                for (const [key, field] of Object.entries(inputFields)) {
+                    const val = getInputValue(field.el);
+                    // إعادة تعيين حالة الخطأ
+                    field.el.classList.remove('error');
+                    field.errorEl.classList.remove('visible');
+                    field.errorEl.textContent = '';
+
+                    if (field.el.value.trim() === '') {
+                        // الحقل الفارغ يُعتبر صفراً
+                        values[key] = 0;
+                        continue;
+                    }
+
+                    if (val === null) {
+                        // قيمة غير رقمية
+                        isValid = false;
+                        errors[key] = '❌ الرجاء إدخال رقم صحيح فقط.';
+                        field.el.classList.add('error');
+                        field.errorEl.textContent = errors[key];
+                        field.errorEl.classList.add('visible');
+                        values[key] = 0;
+                        continue;
+                    }
+
+                    if (val < 0) {
+                        // قيمة سالبة
+                        isValid = false;
+                        errors[key] = '❌ لا يمكن إدخال أرقام سالبة.';
+                        field.el.classList.add('error');
+                        field.errorEl.textContent = errors[key];
+                        field.errorEl.classList.add('visible');
+                        values[key] = 0;
+                        continue;
+                    }
+
+                    values[key] = val;
+                }
+
+                return { isValid, values: isValid ? values : null, errors };
+            }
+
+            /**
+             * حساب الزكاة
+             * @param {object} values - قيم المدخلات
+             * @returns {{ total: number, nisab: number, zakat: number, isEligible: boolean }}
+             */
+            function calculateZakat(values) {
+                const total =
+                    values.cash +
+                    values.gold +
+                    values.silver +
+                    values.investments +
+                    values.trade +
+                    values.receivables -
+                    values.debts;
+
+                const nisab = NISAB_DEFAULT;
+                const isEligible = total >= nisab;
+                const zakat = isEligible ? total * 0.025 : 0;
+
+                return {
+                    total: Math.max(0, total),
+                    nisab,
+                    zakat,
+                    isEligible,
+                };
+            }
+
+            /**
+             * عرض النتائج
+             * @param {object} result
+             */
+            function displayResults(result) {
+                // إظهار بطاقة النتائج
+                resultsCard.classList.add('visible');
+                resultsCard.classList.remove('no-zakat');
+                resultsTitle.textContent = '📊 نتيجة حساب الزكاة';
+                resultsGrid.style.display = '';
+                noZakatMsg.style.display = 'none';
+                totalItem.style.display = '';
+                nisabItem.style.display = '';
+                zakatItem.style.display = '';
+
+                if (!result.isEligible) {
+                    // لا تجب الزكاة
+                    resultsCard.classList.add('no-zakat');
+                    resultsTitle.textContent = 'ℹ️ نتيجة حساب الزكاة';
+                    totalItem.style.display = 'none';
+                    nisabItem.style.display = 'none';
+                    zakatItem.style.display = 'none';
+                    noZakatMsg.style.display = 'block';
+                    noZakatMsg.textContent =
+                        `🙏 لا تجب عليك الزكاة لأن إجمالي المال (${formatNumber(result.total)}) أقل من النصاب (${formatNumber(result.nisab)}).`;
+                } else {
+                    // تجب الزكاة
+                    totalValueEl.textContent = formatNumber(result.total);
+                    nisabValueEl.textContent = formatNumber(result.nisab);
+                    zakatValueEl.textContent = formatNumber(result.zakat);
+                }
+
+                // تمرير سلس إلى النتائج
+                resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            /**
+             * إخفاء النتائج
+             */
+            function hideResults() {
+                resultsCard.classList.remove('visible');
+                resultsCard.classList.remove('no-zakat');
+                noZakatMsg.style.display = 'none';
+                resultsGrid.style.display = '';
+                totalItem.style.display = '';
+                nisabItem.style.display = '';
+                zakatItem.style.display = '';
+            }
+
+            /**
+             * إعادة تعيين جميع الحقول والأخطاء والنتائج
+             */
+            function resetAll() {
+                for (const field of Object.values(inputFields)) {
+                    field.el.value = '';
+                    field.el.classList.remove('error');
+                    field.errorEl.classList.remove('visible');
+                    field.errorEl.textContent = '';
+                }
+                hideResults();
+                // تمرير إلى الأعلى برفق
+                document.getElementById('calculatorSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // ============================
+            // EVENT LISTENERS
+            // ============================
+
+            // تقديم النموذج
+            zakatForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const { isValid, values } = validateAllInputs();
+                if (!isValid || !values) {
+                    // تمرير إلى أول حقل به خطأ
+                    const firstError = document.querySelector('.form-group__input.error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstError.focus();
+                    }
+                    return;
+                }
+                const result = calculateZakat(values);
+                displayResults(result);
+            });
+
+            // إزالة خطأ الحقل عند الكتابة
+            for (const field of Object.values(inputFields)) {
+                field.el.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        this.classList.remove('error');
+                        field.errorEl.classList.remove('visible');
+                        field.errorEl.textContent = '';
+                    }
+                    // منع إدخال علامة السالب
+                    if (this.value.includes('-')) {
+                        this.value = this.value.replace(/-/g, '');
+                    }
+                });
+
+                // منع لصق القيم السالبة
+                field.el.addEventListener('paste', function(e) {
+                    const pasted = (e.clipboardData || window.clipboardData).getData('text');
+                    if (pasted.includes('-')) {
+                        e.preventDefault();
+                        this.value = pasted.replace(/-/g, '');
+                    }
+                });
+
+                // منع حرف e (للأسس) في المدخلات الرقمية
+                field.el.addEventListener('keydown', function(e) {
+                    if (e.key === 'e' || e.key === 'E' || e.key === '-') {
+                        e.preventDefault();
+                    }
+                });
+            }
+
+            // زر إعادة التعيين
+            resetBtn.addEventListener('click', resetAll);
+
+            // ============================
+            // DARK MODE TOGGLE
+            // ============================
+            function getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            function getStoredTheme() {
+                return localStorage.getItem('zakat-calc-theme');
+            }
+
+            function applyTheme(theme) {
+                htmlElement.setAttribute('data-theme', theme);
+                themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+                themeToggle.setAttribute('aria-label',
+                    theme === 'dark' ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الليلي');
+                themeToggle.setAttribute('title',
+                    theme === 'dark' ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الليلي');
+            }
+
+            function toggleTheme() {
+                const current = htmlElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                localStorage.setItem('zakat-calc-theme', next);
+            }
+
+            // تهيئة الوضع
+            const storedTheme = getStoredTheme();
+            const initialTheme = storedTheme || getSystemTheme();
+            applyTheme(initialTheme);
+
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // الاستماع لتغيير تفضيلات النظام
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!getStoredTheme()) {
+                    applyTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+
+            // ============================
+            // FAQ ACCORDION
+            // ============================
+            document.querySelectorAll('.faq-item__question').forEach(questionEl => {
+                questionEl.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isOpen = faqItem.classList.contains('open');
+                    // إغلاق جميع العناصر الأخرى
+                    document.querySelectorAll('.faq-item.open').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('open');
+                            item.querySelector('.faq-item__question').setAttribute(
+                                'aria-expanded', 'false');
+                        }
+                    });
+                    // فتح/إغلاق العنصر الحالي
+                    if (isOpen) {
+                        faqItem.classList.remove('open');
+                        this.setAttribute('aria-expanded', 'false');
+                    } else {
+                        faqItem.classList.add('open');
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+
+                // دعم لوحة المفاتيح
+                questionEl.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+
+            // ============================
+            // SCROLL REVEAL ANIMATION
+            // ============================
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.1,
+            };
+
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // ============================
+            // SHARE BUTTONS
+            // ============================
+            const pageUrl = encodeURIComponent(window.location.href);
+            const pageTitle = encodeURIComponent('حاسبة زكاة المال - احسب زكاتك بسهولة');
+            const pageDesc = encodeURIComponent('احسب مقدار الزكاة المستحقة عليك بسهولة وفق الشريعة الإسلامية.');
+
+            const shareUrls = {
+                whatsapp: `https://wa.me/?text=${pageTitle}%20-%20${pageUrl}`,
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
+                twitter: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`,
+                telegram: `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`,
+            };
+
+            document.querySelectorAll('.share-btn[data-platform]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const platform = this.getAttribute('data-platform');
+                    const url = shareUrls[platform];
+                    if (url) {
+                        window.open(url, '_blank', 'width=600,height=450,noopener,noreferrer');
+                    }
+                });
+            });
+
+            // نسخ الرابط
+            copyLinkBtn.addEventListener('click', function() {
+                const url = window.location.href;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url).then(() => {
+                        showCopiedTooltip();
+                    }).catch(() => {
+                        fallbackCopy(url);
+                    });
+                } else {
+                    fallbackCopy(url);
+                }
+            });
+
+            function fallbackCopy(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                textarea.style.top = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopiedTooltip();
+                } catch (err) {
+                    alert('تعذر نسخ الرابط. الرجاء نسخه يدوياً: ' + text);
+                }
+                document.body.removeChild(textarea);
+            }
+
+            function showCopiedTooltip() {
+                copiedTooltip.classList.add('show');
+                clearTimeout(copiedTooltip._timeout);
+                copiedTooltip._timeout = setTimeout(() => {
+                    copiedTooltip.classList.remove('show');
+                }, 2000);
+            }
+
+            // ============================
+            // INITIAL SETUP
+            // ============================
+            // عرض قيمة النصاب في وحدة التحكم للتذكير بتحديثها
+            console.log(
+                `%c🕌 حاسبة زكاة المال %c| %cالنصاب الحالي: ${formatNumber(NISAB_DEFAULT)} %c| %cقم بتحديث قيمة النصاب في ملف script.js حسب سعر الذهب الحالي (85 غراماً).`,
+                'font-weight:bold;color:#1a7a4c;',
+                '',
+                'font-weight:bold;color:#c9a84c;',
+                '',
+                'color:#6b7280;font-style:italic;'
+            );
+
+            // دعم التمرير للقسم عند تحميل الصفحة بهاش
+            if (window.location.hash === '#calculatorSection') {
+                setTimeout(() => {
+                    document.getElementById('calculatorSection').scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+
+        })();
+    </script>
+</body>
+</html>
